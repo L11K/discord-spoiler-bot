@@ -5,9 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha --recursive ./test/mocha/",
+	"start": "node index.js",
     "test-no-delete": "env NO_DELETE=true mocha --recursive ./test/mocha/",
     "lint": "eslint ./src/ ./test/"
   },
+  
+  "engines": { "node": "8.4.0" },
+  
   "repository": {
     "type": "git",
     "url": "git+https://github.com/TimboKZ/discord-spoiler-bot.git"
@@ -33,7 +37,10 @@
     "canvas": "^1.6.3",
     "discord.io": "^2.4.2",
     "discord.js": "^11.1.0",
-    "gifencoder": "^1.0.6"
+	"gifencoder": "^1.0.6",
+	"express": "^4.16.2",
+	"moment": "^2.18.1",
+    "moment-duration-format": "^1.3.0"
   },
   "devDependencies": {
     "chai": "^3.5.0",

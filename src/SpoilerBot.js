@@ -56,7 +56,7 @@ class SpoilerBot {
             throw new Error('No config has been specified!');
         }
         if (config.token === undefined && config.client === undefined) {
-            throw new Error('You need to specify `token` or `client` for this but to work!');
+            throw new Error('You need to specify `token` or `client` for this bot to work!');
         }
         if (config.token !== undefined && config.client !== undefined) {
             throw new Error('You ca\'t specify both `token` and `client`! Choose one.');
@@ -215,7 +215,7 @@ class SpoilerBot {
     printSpoiler(originalMessage, spoiler) {
         let messageContent = `<@${spoiler.message.authorId}>: **${spoiler.topic}** spoiler`;
         if (originalMessage.id !== spoiler.message.id) {
-            messageContent += ` (marked by <@${originalMessage.authorId}>)`;
+            messageContent += ` (process.env.MARKED_BY <@${originalMessage.authorId}>)`;
         }
         let maxLines = this.config.maxLines ? this.config.maxLines : DEFAULT_MAX_LINES;
         this.gifGenerator.createSpoilerGif(spoiler, maxLines, filePath => {

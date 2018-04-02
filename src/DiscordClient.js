@@ -4,7 +4,7 @@
  * @copyright 2017
  * @license MIT
  */
-
+ 
 const DiscordJS = require('discord.js');
 
 const DISCORD_JS = 'discord.js';
